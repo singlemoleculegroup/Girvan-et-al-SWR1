@@ -9,13 +9,13 @@ Switching on and off of the excitation lasers was achieved using two mechanical 
 In order to map the two emission channels, a recording (50 - 100 frames is sufficient) of fluorescent beads is recorded. The fluorescent beads should emit in both emission channels. This beads recording can be acquired using direct single excitation, and doesn't require ALEX.
 <details><summary>Mapping step by step guide</summary>
 
-1. Open IDL and `mapping_maker.pro` 
-2. Compile and run the script.
-3. Navigate to and select the recording of the fluorescent beads
-4. IDL will display the beads image and automatically identify fluorescent spots in both the donor and acceptor emission channels.
-5. Use the mouse and left-click to select a single spot in the left hand side of the image for which there is the corresponding spot in the right half of the image. The script will automatically try and select the corresponding spot in the right half of the image, but depending on alignment and how crowded the image is this may fail and you will need to select the correct spot in the right half manually. Once the same spot is selected in both channels confirm the selection by right-clicking on the image.
+1. Open IDL and the two scripts inside the `mapping_scripts folder`.
+2. The scripts expect to find the mapping file in the following directory `C:\Data\beads1.pma`
+3. Compile both scripts and first run `calc_mapping2_marcus.pro`
+4. IDL will display the beads image.
+5. Use the mouse and left-click to select a single spot in the left hand side of the image for which there is the corresponding spot in the right half of the image. The corresponding spot in the right half of the image will be highlighted. Tweak the positions using the keyboard and then press 's' to select this pair of spots.
 6. Repeat step 5 two more times, to give a total of three pairs of spots. Try and spread out the three pairs as much as possible, e.g. bottom-left, top-middle and middle-right of the image.
-7. The script will automatically pair the rest of the fluorescent spots in the image and output several files to check the mapping was successful, along with a mapping file `beadsFilename.map`.
+7. Next run the second script `nxgn1_cm_marcus.pro`. The script will automatically try and pair the rest of the fluorescent spots in the image and output several files to check the mapping was successful, along with a mapping file `beads1.map`. 
 
 </details>
 
