@@ -63,7 +63,7 @@ pro smi_peak_trace_maker_3color_alex, run, text_ID, color_number_input
 	GoodLocations_x = intarr(4000)
 	GoodLocations_y = intarr(4000)
 	Background_blue = dblarr(4000)
-	Background_green = dblarr(4000)
+	Background_red = dblarr(4000)
 	NumberofGoodLocations = 0
 	xx = fix(1)
 	yy = fix(1)
@@ -76,7 +76,7 @@ pro smi_peak_trace_maker_3color_alex, run, text_ID, color_number_input
     	GoodLocations_x(NumberofGoodLocations) = xx
     	GoodLocations_y(NumberofGoodLocations) = yy
     	Background_blue(NumberofGoodLocations) = back_blue
-    	Background_green(NumberofGoodLocations) = back_red
+    	Background_red(NumberofGoodLocations) = back_red
     	NumberofGoodLocations = NumberofGoodLocations + 1
 	endwhile
 	close, 2
@@ -151,7 +151,7 @@ pro smi_peak_trace_maker_3color_alex, run, text_ID, color_number_input
 			if (t mod 2) eq 0 then begin
 				temp = double(circle) * (double(frame((GoodLocations_x(j)-half_diameter):(GoodLocations_x(j)+half_diameter), (GoodLocations_y(j)-half_diameter):(GoodLocations_y(j)+half_diameter))) - Background_blue(j) )
 			endif else begin
-				temp = double(circle) * (double(frame((GoodLocations_x(j)-half_diameter):(GoodLocations_x(j)+half_diameter), (GoodLocations_y(j)-half_diameter):(GoodLocations_y(j)+half_diameter))) - Background_green(j) )
+				temp = double(circle) * (double(frame((GoodLocations_x(j)-half_diameter):(GoodLocations_x(j)+half_diameter), (GoodLocations_y(j)-half_diameter):(GoodLocations_y(j)+half_diameter))) - Background_red(j) )
 			endelse
 			time_trace(j, t) = round(total(temp))
 		endfor
