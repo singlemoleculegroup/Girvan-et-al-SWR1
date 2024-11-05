@@ -9,7 +9,7 @@ Switching on and off of the excitation lasers was achieved using two mechanical 
 In order to map the two emission channels, a recording (50 - 100 frames is sufficient) of fluorescent beads is recorded. The fluorescent beads should emit in both emission channels. This beads recording can be acquired using direct single excitation, and doesn't require ALEX.
 <details><summary>Mapping step by step guide</summary>
 
-1. Open IDL and the two scripts inside the `mapping_scripts folder`.
+1. Open IDL and the two scripts inside the `mapping_scripts` folder.
 2. The scripts expect to find the mapping file in the following directory `C:\Data\beads1.pma`
 3. Compile both scripts and first run `calc_mapping2_marcus.pro`
 4. IDL will display the beads image.
